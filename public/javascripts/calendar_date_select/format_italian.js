@@ -1,9 +1,9 @@
 // Italian Format: 31/12/2000 23:00
 // Thanks, Bigonazzi!
 
-Date.prototype.toFormattedString = function(include_time){
+Date.prototype.toFormattedString = function(include_time, interval){
   str = this.getDate() + "/" + (this.getMonth() + 1) + "/" + this.getFullYear();
-  if (include_time) { str += " " + this.getHours() + ":" + this.getPaddedMinutes() }
+  if (include_time) { str += " " + this.getHours() + ":" + this.getPaddedMinutes(interval) }
   return str;
 }
 

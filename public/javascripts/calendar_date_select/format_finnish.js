@@ -2,9 +2,9 @@ Date.padded2 = function(hour) { padded2 = hour.toString(); if ((parseInt(hour) <
 Date.prototype.getAMPMHour = function() { hour=Date.padded2(this.getHours()); return (hour == null) ? 00 : (hour > 24 ? hour - 24 : hour ) }
 Date.prototype.getAMPM = function() { return (this.getHours() < 12) ? "" : ""; }
 
-Date.prototype.toFormattedString = function(include_time){
+Date.prototype.toFormattedString = function(include_time, interval){
   str = this.getDate() + "." + (this.getMonth() + 1) + "." + this.getFullYear();
-  if (include_time) { hour=this.getHours(); str += " " + this.getAMPMHour() + ":" + this.getPaddedMinutes() }
+  if (include_time) { hour=this.getHours(); str += " " + this.getAMPMHour() + ":" + this.getPaddedMinutes(interval) }
   return str;
 }
 Date.parseFormattedString = function (string) {

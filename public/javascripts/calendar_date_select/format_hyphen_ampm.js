@@ -1,7 +1,7 @@
-Date.prototype.toFormattedString = function(include_time){
+Date.prototype.toFormattedString = function(include_time, interval){
   str = this.getFullYear() + "-" + Date.padded2(this.getMonth() + 1) + "-" +Date.padded2(this.getDate()); 
 
-if (include_time) { hour=this.getHours(); str += " " + this.getAMPMHour() + ":" + this.getPaddedMinutes() + " " + this.getAMPM() }
+if (include_time) { hour=this.getHours(); str += " " + this.getAMPMHour() + ":" + this.getPaddedMinutes(interval) + " " + this.getAMPM() }
 return str;
 }
 

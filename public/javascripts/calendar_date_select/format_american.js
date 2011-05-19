@@ -1,9 +1,9 @@
 // American Format: 12/31/2000 5:00 pm
 // Thanks, Wes Hays
-Date.prototype.toFormattedString = function(include_time){
+Date.prototype.toFormattedString = function(include_time, interval){
   str = Date.padded2(this.getMonth() + 1) + '/' +Date.padded2(this.getDate()) + '/' + this.getFullYear();
 
-  if (include_time) { hour=this.getHours(); str += " " + this.getAMPMHour() + ":" + this.getPaddedMinutes() + " " + this.getAMPM() }
+  if (include_time) { hour=this.getHours(); str += " " + this.getAMPMHour() + ":" + this.getPaddedMinutes(interval) + " " + this.getAMPM() }
   return str;
 }
 
